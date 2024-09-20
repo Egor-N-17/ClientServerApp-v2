@@ -1,2 +1,3 @@
 # ClientServerApp-v2
-ClientServerApp base on TCP/IP connection. Application read xml file and take command and response message. Client send command message to server each second, and server send corresponding responce message.
+This project is the copy of ClientServerApp v1, but connection by TCP/IP is based on Boost.ASIO library.
+The structure of project for Windows is the similar

@@ -1,0 +1,27 @@
+all: program
+
+program: Logger.o XMLFile.o TestClass.o ClientServerApp.o User.o Socket.o
+	g++ -m64 Logger.o XMLFile.o TestClass.o ClientServerApp.o Socket.o User.o -o ClientServerApp -lboost_locale
+
+Logger.o: Logger.cpp
+	g++ -std=c++20 -m64 -c -g Logger.cpp
+
+XMLFile.o: XMLFile.cpp
+	g++ -std=c++20 -m64 -c -g XMLFile.cpp
+
+TestClass.o: TestClass.cpp
+	g++ -std=c++20 -m64 -c -g TestClass.cpp
+
+ClientServerApp.o: ClientServerApp.cpp
+	g++ -std=c++20 -m64 -c -g ClientServerApp.cpp
+
+Socket.o: Socket.cpp
+	g++ -std=c++20 -m64 -c -g Socket.cpp
+
+User.o: User.cpp
+	g++ -std=c++20 -m64 -c -g User.cpp
+
+clean:
+	rm -rf *.o program
+
+recompile: clean all
